@@ -80,6 +80,7 @@
     <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorSelf.cs" />
     <Compile Include="Assets\ExplosionEffect\Scripts\ScrollingUVs_PDS.cs" />
     <Compile Include="Assets\script\ExplosionEffectRemove.cs" />
+    <Compile Include="Assets\script\WallJump.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Shuriken\Demo Scene\Prototyping\Shaders\WorldCoordDiffuse.shader" />

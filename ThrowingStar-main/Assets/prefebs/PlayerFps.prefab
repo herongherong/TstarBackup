@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6833268890426934527}
   - component: {fileID: 6833268890426934526}
   - component: {fileID: 6833268890426934465}
+  - component: {fileID: 6695661136902427481}
   m_Layer: 0
   m_Name: PlayerFps
   m_TagString: Untagged
@@ -79,6 +80,9 @@ MonoBehaviour:
   keyboard2: 50
   keyboard3: 51
   jumpForce: 12
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &6833268890426934526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +114,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.55
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &6695661136902427481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6833268890426934522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680dedf84782bfe4f90ec03957e2108a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 6833268891584733842}
+  wallDistance: 0.5
+  minimumJumpHeight: 1.5
 --- !u!1 &6833268890732581500
 GameObject:
   m_ObjectHideFlags: 0

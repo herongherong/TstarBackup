@@ -152,7 +152,8 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(jumpKey) && !isGrounded && isDoubleJump)
         {
-            doubleJump(); isDoubleJump = false; 
+            //doubleJump(); 
+            isDoubleJump = false; 
         }
 
         //경사면 처리
@@ -247,7 +248,7 @@ public class Player : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse); 
     }
 
-    void doubleJump()
+    void doubleJump() //벽점프 대용이었는데... 유튜브에 있는걸로 해야 바라보는 방향 반사각으로 뜀.
     {
         
         //점프시 위쪽방향으로 힘추가하는 식으로 점프한다함
