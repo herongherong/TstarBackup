@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2020_2_7;UNITY_2020_2;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;AURA_IN_SCENEVIEW;AURA_IN_PROJECT;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2020_2_7;UNITY_2020_2;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;AURA_IN_PROJECT;AURA_IN_SCENEVIEW;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -53,90 +53,90 @@
     <UnityVersion>2020.2.7f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Aura 2\Core\Code\Extensions\Vector4Extensions.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Enums\VolumeType.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\LevelsData.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Enums\Texture3DFiltering.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Enums\BooleanChoice.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Statics\Aura.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\DirectionalLightParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\TextureBuffers.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Extensions\Gaia\Aura2GaiaExtension.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeDynamicNoiseData.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Statics\CustomGizmo.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeData.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\VolumesCommonDataManager.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Statics\AuraUtility.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraQualitySettings.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Enums\Presets.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\PointLightsManager.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Enums\DenoisingFilterRange.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\CullableObject.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeInjectionCommonParameters.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\DirectionalLightsManager.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Statics\AuraPreset.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\Texture3DAtlasComposer.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Extensions\FloatExtensions.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Extensions\RenderTextureExtensions.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Enums\OcclusionCullingAccuracy.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Enums\FrustumParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\VisibleCellData.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\LevelsData.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\PointLightsManager.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\ObjectsCuller.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\SphericalHarmonicsFirstBandCoefficients.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Statics\Aura.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Helpers\MathHelpers.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraCamera.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\TransformParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Helpers\XrHelpers.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\FrustumSettingsParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\DirectionalShadowDataCollector.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Attributes\Texture3DPreviewAttribute.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\MatrixFloats.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Enums\VolumeType.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Enums\DenoisingFilterRange.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraResourcesCollection.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\Texture2DMask.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Enums\BlurFilterRange.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Extensions\CameraExtensions.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\VolumesCommonDataManager.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\Texture3DAtlasComposer.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Extensions\GenericExtensions.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Statics\AuraEditorPrefs.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\Texture2DArrayComposer.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraLight.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraBaseSettings.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Extensions\ObjectExtensions.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\SpotLightsManager.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeInjectionParameters.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\VolumesManager.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\Texture3DMask.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\FrustumSettingsToId.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraCamera.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\FrustumCuller.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\CommonDataManager.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\DynamicNoiseParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\PointLightParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Extensions\Vector3Extensions.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\FrustumSettings.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\LevelsParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Extensions\Vector4Extensions.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Enums\BooleanChoice.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\CullableObject.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraSprite.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\SpotLightParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Helpers\LightHelpers.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\LightsCommonDataManager.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraVolume.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeInjectionShape.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraQualitySettings.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Enums\Presets.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeInjectionCommonParameters.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Helpers\MathHelpers.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\VolumesManager.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\AmbientLightingCommonDataManager.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Enums\BlurFilterType.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraSprite.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\TransformParameters.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Extensions\StringExtensions.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Attributes\ColorCircularPickerAttribute.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\DirectionalLightParameters.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Helpers\XrHelpers.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\FrustumSettingsParameters.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\FrustumCuller.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\DirectionalShadowDataCollector.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Enums\StereoMode.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Structs\SphericalHarmonicsCoefficients.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Extensions\Texture3DExtensions.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\Frustum.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\SpotLightParameters.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Extensions\FrustumParametersEnumExtensions.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\LightsCommonDataManager.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Attributes\Texture3DPreviewAttribute.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Structs\TextureMaskData.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Helpers\LightHelpers.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeGradient.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Extensions\RenderTextureExtensions.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\ShadowmapsCollector.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\TextureBuffers.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Extensions\Gaia\Aura2GaiaExtension.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\CommonDataManager.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Statics\SceneViewVisualization.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\MatrixFloats.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\DynamicNoiseParameters.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Extensions\IntExtensions.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeDynamicNoiseData.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Enums\OcclusionCullingAccuracy.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Extensions\SphericalHarmonicsExtensions.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\PointLightParameters.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraVolume.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Extensions\Vector3Extensions.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeInjectionColorParameters.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Enums\FrustumParameters.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeInjectionShape.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\FrustumSettings.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Classes\SwappableRenderTexture.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraResourcesCollection.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Classes\Texture2DMask.cs" />
     <Compile Include="Assets\Aura 2\Core\Code\Extensions\Matrix4x4Extensions.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Enums\BlurFilterRange.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\VisibleCellData.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Structs\LevelsParameters.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Extensions\CameraExtensions.cs" />
-    <Compile Include="Assets\Aura 2\Core\Code\Statics\CustomGizmo.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Statics\AuraUtility.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\SphericalHarmonicsFirstBandCoefficients.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\AuraLight.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\SpotLightsManager.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Classes\FrustumSettingsToId.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Extensions\Texture3DExtensions.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Statics\SceneViewVisualization.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Extensions\IntExtensions.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Extensions\SphericalHarmonicsExtensions.cs" />
+    <Compile Include="Assets\Aura 2\Core\Code\Structs\VolumeInjectionColorParameters.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Aura 2\Core\Code\Shaders\Shaders\Core\PostProcessShader.shader" />
@@ -418,6 +418,12 @@
     </Reference>
     <Reference Include="UnityEditor.UWP.Extensions">
       <HintPath>C:\unity\2020.2.7f1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionApplication">
+      <HintPath>Assets\UMotionEditor\Plugins\Application\UMotionApplication.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionEditor">
+      <HintPath>Assets\UMotionEditor\Plugins\Editor\UMotionEditor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\unity\2020.2.7f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

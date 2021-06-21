@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     public Transform BulletPos;
     public Vector3 jumpVector;
-
+    public float Speed;
 
     //캐릭터높이 정해줌 밑에 있는 isGround에서 사용
     float playerHeight = 2f;
@@ -97,6 +97,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+
+        Speed = rb.velocity.sqrMagnitude; // 이 캐릭터의 속도를 딴곳에서 쓸거라서..
+        Debug.Log("spd:" + Speed);
+
         //땅과의 충돌을 확인, 캐릭터 높이 2f에서 반 나누고 땅과 높이측정함. 
         //닿지 않을떄도 있으니 확실하게 하려고 0.1f로 보완
         //isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight / 2 + 0.1f);
@@ -108,42 +112,44 @@ public class Player : MonoBehaviour
         {
             isDoubleJump = false;
         }
-
+        
 
         MyInput();
         ControlDrag();
 
         //총알 생성. xRotation을 카메라에서 받아야하는데..
-        if (Input.GetMouseButtonDown(0))
-        {//카메라에 x로테이션이 달려있어서 불릿 생성시 x회전이 전혀 들어가지 않음... 해결중
-            //playerCamera 에서 둘다 받아와서 추가했음.
-            playerCamera playercamera = GameObject.Find("PlayerFps").GetComponent<playerCamera>();
-            float xRotationTemp = playercamera.xRotation;
-            float yRotationTemp = playercamera.yRotation;
-            Quaternion pRotation = Quaternion.Euler(xRotationTemp, yRotationTemp, 0);
+        
 
-            //폭발수리검
-            if(WeaponinHand == 1)
-            {
-                Debug.Log("폭발수리검 발사");
-                
-                GameObject Bullet = Instantiate(Bullets, BulletPos.position, pRotation);
-                //GameObject Bullet = Instantiate(Bullets, BulletPos.position, transform.localRotation);
+            if (Input.GetMouseButtonUp(0))
+            {//카메라에 x로테이션이 달려있어서 불릿 생성시 x회전이 전혀 들어가지 않음... 해결중
+             //playerCamera 에서 둘다 받아와서 추가했음.
+                playerCamera playercamera = GameObject.Find("PlayerFps").GetComponent<playerCamera>();
+                float xRotationTemp = playercamera.xRotation;
+                float yRotationTemp = playercamera.yRotation;
+                Quaternion pRotation = Quaternion.Euler(xRotationTemp, yRotationTemp, 0);
+
+                //폭발수리검
+                if (WeaponinHand == 1)
+                {
+                    Debug.Log("폭발수리검 발사");
+
+                    GameObject Bullet = Instantiate(Bullets, BulletPos.position, pRotation);
+                    //GameObject Bullet = Instantiate(Bullets, BulletPos.position, transform.localRotation);
+                }
+                //중력수리검
+                else if (WeaponinHand == 2)
+                {
+                    Debug.Log("중력수리검 발사");
+
+                    GameObject Bullet2 = Instantiate(Bullets2, BulletPos.position, pRotation);
+                }
+                //맨손, 
+                else if (WeaponinHand == 3)
+                {
+
+                }
+
             }
-            //중력수리검
-            else if(WeaponinHand == 2)
-            {
-                Debug.Log("중력수리검 발사");
-                
-                GameObject Bullet2 = Instantiate(Bullets2, BulletPos.position, pRotation);
-            }
-            //맨손, 
-            else if(WeaponinHand == 3)
-            {
-                
-            }
-            
-        }
 
         //점프와 더블점프(벽점프)
         if(Input.GetKeyDown(jumpKey) && isGrounded)
