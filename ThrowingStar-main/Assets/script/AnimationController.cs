@@ -65,11 +65,18 @@ public class AnimationController : MonoBehaviour
 
         if(Input.GetKey(jumpKey) || Input.GetKey(sliding))
         {
-
             animator.SetTrigger("stopRunning");
+            
         }
         
     }
 
-
+    public void wallJumpRIghtOn()
+    {
+        animator.SetTrigger("wallJumpRight");
+    }
+    public void wallJumpLeftOn()
+    {
+        animator.SetTrigger("wallJumpLeft");
+    }
 }

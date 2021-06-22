@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     {
 
         Speed = rb.velocity.sqrMagnitude; // 이 캐릭터의 속도를 딴곳에서 쓸거라서..
-        Debug.Log("spd:" + Speed);
+        //Debug.Log("spd:" + Speed);
 
         //땅과의 충돌을 확인, 캐릭터 높이 2f에서 반 나누고 땅과 높이측정함. 
         //닿지 않을떄도 있으니 확실하게 하려고 0.1f로 보완

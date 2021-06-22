@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WallJump : MonoBehaviour
 {
+
+    
     [SerializeField] Transform orientation;
 
     [Header("Wall Jumping")]
@@ -14,9 +16,19 @@ public class WallJump : MonoBehaviour
     [SerializeField] private float wallRunGravity = -2;
     [SerializeField] private float wallRunJumpForce = 6;
 
+    [Header("Camera")]
+    [SerializeField] private Camera cam;
+    [SerializeField] private float fov;
+    [SerializeField] private float wallRunfov;
+    [SerializeField] private float wallRunfovTime;
+    [SerializeField] private float camTilt;
+    [SerializeField] private float camTiltTime;
+
+    public float tilt { get; private set; }
     bool wallLeft = false;
     bool wallRight = false;
 
+    bool isWallRunning = false;
     //벽점프 wallRun 0.5초 이상 못하도록 시간재는 변수
     float collisionTime = 0f;
 
@@ -38,6 +50,7 @@ public class WallJump : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+       
     }
     
     void CheckWall()
@@ -104,7 +117,36 @@ public class WallJump : MonoBehaviour
         rb.useGravity = false;
 
         rb.AddForce(Vector3.down * wallRunGravity, ForceMode.Force);
-        
+
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallRunfov, wallRunfovTime * Time.deltaTime);
+
+        //벽점프시 애니메이션 + 카메라 기울이기 추가 
+        if (wallLeft)
+        {
+            tilt = Mathf.Lerp(tilt, -camTilt, camTiltTime * Time.deltaTime);
+            if(isWallRunning == false)
+            {
+                GameObject.Find("Robot Kyle_1 Variant").GetComponent<AnimationController>().wallJumpLeftOn();
+                //에니메이션 컨트롤러에 붙은놈이라 실행안됨.animator.SetTrigger("wallJumpLeft");
+                isWallRunning = true;
+
+            }
+        }
+        else if(wallRight)
+        {
+            tilt = Mathf.Lerp(tilt, camTilt, camTiltTime * Time.deltaTime);
+            if (isWallRunning == false)
+            {
+                GameObject.Find("Robot Kyle_1 Variant").GetComponent<AnimationController>().wallJumpRIghtOn();
+
+                //animator.SetTrigger("wallJumpRIght");
+                isWallRunning = true;
+            }
+                
+        }
+
+
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if(wallLeft) //점프방향을 계산해줌. 반사각대로 벽에서 튕겨져 나가면서 + 앞으로 점프하기 위해서
@@ -132,6 +174,9 @@ public class WallJump : MonoBehaviour
         rb.useGravity = true;
 
         collisionTime = 0;
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallRunfovTime * Time.deltaTime);
+        tilt = Mathf.Lerp(tilt,0, camTiltTime * Time.deltaTime);
+        isWallRunning = false;
     }
 
 

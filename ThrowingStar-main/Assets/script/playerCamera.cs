@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class playerCamera : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] WallJump wallJump;
+
     [SerializeField] private float sensX;
     [SerializeField] private float sensY;
 
@@ -38,7 +41,7 @@ public class playerCamera : MonoBehaviour
         MyInput();
 
         //벡터3랑 달라서 바꿔줘야하는걸로 알고있음. (오일러로)
-        cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0);
+        cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, wallJump.tilt);
         orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
 
         
