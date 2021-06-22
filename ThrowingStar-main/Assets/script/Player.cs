@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 //Plai À¯Æ©ºê https://www.youtube.com/watch?v=LqnPeqoJRFY ÂüÁ¶
@@ -61,6 +62,8 @@ public class Player : MonoBehaviour
     Rigidbody rb;
 
     RaycastHit slopeHit;
+
+    public GameObject PauseUI;
 
 
     private bool OnSlope()
@@ -226,6 +229,14 @@ public class Player : MonoBehaviour
             }
                 
             
+        }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+
+            PauseUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
     }
