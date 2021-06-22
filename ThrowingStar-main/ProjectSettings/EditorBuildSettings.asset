@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: c6829aa3f36ac574b91ffc76215ae040
+    path: Assets/Scenes/new Stage.unity
+    guid: cb6df2bfd7572f44dbd074ab9b40f336
   - enabled: 1
-    path: Assets/Scenes/breakDownCathedral.unity
-    guid: d3b97a05605867e46b7236bd8e307b4b
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

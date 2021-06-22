@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    GameObject TargetObj; 
+    GameObject TargetObj;
     Vector3 offset;
     Transform tr;
     public Vector3 pos;
@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         isCollsion = false;
         offset = new Vector3(0, 0, 0);
         pos = this.gameObject.transform.position;
-        
+
     }
 
     // Update is called once per frame
@@ -33,12 +33,12 @@ public class Bullet : MonoBehaviour
         {
             //if(firstCollision == false)
             //{
-            
+
 
             transform.position = bulPos;
 
-               // firstCollision = true;
-               //}
+            // firstCollision = true;
+            //}
 
         }
         else
@@ -63,7 +63,7 @@ public class Bullet : MonoBehaviour
             //firstCollision = true;
             bulPos = TargetObj.transform.position - offset;
         }
-        else if(other.tag == "Enemy")
+        else if (other.tag == "Enemy")
         {
             TargetObj = GameObject.FindWithTag("Enemy");
             offset = TargetObj.transform.position - transform.position;
@@ -75,33 +75,8 @@ public class Bullet : MonoBehaviour
             bulPos = TargetObj.transform.position - offset;
         }
 
-         
 
-       
-    }
-    /*
-    void collisionOK()
-    {
-        rotateShuriken rotateshuriken = GameObject.Find("Shuriken").GetComponent<rotateShuriken>();
-        //rotateshuriken.isCol = true;
-        //rotateshuriken.turnSpeed = 0.0f ;
+
 
     }
-    
-    void ExpBarrel()
-    {
-        //지정한 원점을 중심으로 10.0f 반경 내에 들어와 있는 Collider 객체 추출
-        Collider[] colls = Physics.OverlapSphere(tr.position, 1000.0f, 1 << 4);
-
-        //추출한 Collider 객체에 폭발력 전달
-        foreach (Collider coll in colls)
-        {
-            Rigidbody rbody = coll.GetComponent<Rigidbody>();
-
-            rbody.mass = 1.0f;
-            rbody.AddExplosionForce(1000.0f, tr.position, 10.0f, 1300.0f);
-
-        }
-
-    }*/
 }

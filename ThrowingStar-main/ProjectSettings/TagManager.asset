@@ -7,7 +7,7 @@ TagManager:
   - Wall
   - Enemy
   - Shuriken
-  - fallingObjects
+  - cube
   layers:
   - Default
   - TransparentFX
@@ -15,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 

@@ -22,7 +22,7 @@ public class expBullet : MonoBehaviour
         isCollsion = false;
         offset = new Vector3(0, 0, 0);
         tr = GetComponent<Transform>();
-        cookingTime = 1f;
+        cookingTime = 2f;
     }
 
     // Update is called once per frame
@@ -61,7 +61,7 @@ public class expBullet : MonoBehaviour
             Invoke("explosion", cookingTime);
         }
 
-       
+
     }
 
     void collisionOK()
