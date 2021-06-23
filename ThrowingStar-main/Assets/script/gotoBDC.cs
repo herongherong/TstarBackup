@@ -21,4 +21,9 @@ public class gotoBDC : MonoBehaviour
     {
         SceneManager.LoadScene("breakDownCathedral");
     }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        SceneManager.LoadScene("breakDownCathedral");
+    }
 }

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: c6829aa3f36ac574b91ffc76215ae040
   - enabled: 1
+    path: Assets/Scenes/newStage.unity
+    guid: a838050c989e0e742a0e1ca905a95411
+  - enabled: 1
     path: Assets/Scenes/breakDownCathedral.unity
     guid: d3b97a05605867e46b7236bd8e307b4b
   m_configObjects: {}

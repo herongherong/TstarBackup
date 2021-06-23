@@ -158,6 +158,11 @@
     <Compile Include="Assets\script\ExplosionEffectRemove.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Aura 2\Examples\Sources\Scripts\DebugFps.cs" />
+    <Compile Include="Assets\script\moveBarrier.cs" />
+    <Compile Include="Assets\script\gotoNewStage.cs" />
+    <Compile Include="Assets\script\EnemyBullet.cs" />
+    <Compile Include="Assets\script\Enemyfire.cs" />
+    <Compile Include="Assets\script\ExitGame.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Shuriken\Demo Scene\Prototyping\Shaders\WorldCoordDiffuse.shader" />
