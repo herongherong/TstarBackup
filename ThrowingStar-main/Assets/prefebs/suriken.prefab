@@ -137,6 +137,7 @@ MonoBehaviour:
   cookingTime: 0
   isCollsion: 0
   explosionEffect: {fileID: 153650395967285316, guid: 37d0ebe668bc11e409bd7e2823ee9a0c, type: 3}
+  exp: {fileID: 6589702978492314243, guid: a91b5ffb2b5b9cd4a8e3985a6077384c, type: 3}
   bulletSpeed: 40
 --- !u!1001 &5251001452574576397
 PrefabInstance:

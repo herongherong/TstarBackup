@@ -14,6 +14,8 @@ public class expBullet : MonoBehaviour
 
     public GameObject explosionEffect;
 
+    public AudioSource exp; // Æø¹ßÀ½
+
     public float bulletSpeed = 30;
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,8 @@ public class expBullet : MonoBehaviour
 
     private void explosion()
     {
+        exp.Play(); // Æø¹ßÀ½ Àç»ý
+
         Collider[] colls = Physics.OverlapSphere(tr.position, 10.0f);
 
         foreach (Collider coll in colls)

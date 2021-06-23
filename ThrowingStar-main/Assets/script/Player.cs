@@ -63,7 +63,9 @@ public class Player : MonoBehaviour
 
     RaycastHit slopeHit;
 
-    public GameObject PauseUI;
+    public GameObject PauseUI;  //퍼즈UI연결
+
+    public AudioSource thr;     //던지는 소리.  좌클릭시 Play
 
 
     private bool OnSlope()
@@ -132,6 +134,8 @@ public class Player : MonoBehaviour
                 
                 GameObject Bullet = Instantiate(Bullets, BulletPos.position, pRotation);
                 //GameObject Bullet = Instantiate(Bullets, BulletPos.position, transform.localRotation);
+
+                thr.Play();// 수리검 던질때만 소리나게
             }
             //중력수리검
             else if(WeaponinHand == 2)
@@ -139,13 +143,18 @@ public class Player : MonoBehaviour
                 Debug.Log("중력수리검 발사");
                 
                 GameObject Bullet2 = Instantiate(Bullets2, BulletPos.position, pRotation);
+
+                thr.Play();// 수리검 던질때만 소리나게
             }
             //맨손, 
             else if(WeaponinHand == 3)
             {
                 
             }
+
             
+
+
         }
 
         //점프와 더블점프(벽점프)
