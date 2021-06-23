@@ -57,6 +57,8 @@
     <Compile Include="Assets\Aura 2\Examples\Sources\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\MTree\Scripts\Node.cs" />
     <Compile Include="Assets\MTree\Scripts\TreeFunctions\TreeFunctionAsset.cs" />
+    <Compile Include="Assets\Full Body FPS Controller\Full Body FPS Controller\Scripts\FPSAnimator_SMB.cs" />
+    <Compile Include="Assets\UMotionExamples\Miscellaneous\Scripts\ResetPosition.cs" />
     <Compile Include="Assets\MTree\Scripts\AO\KDTree.cs" />
     <Compile Include="Assets\Aura 2\Examples\Sources\Scripts\AutoMoveAndRotate.cs" />
     <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorLinear.cs" />
@@ -74,8 +76,10 @@
     <Compile Include="Assets\script\trail.cs" />
     <Compile Include="Assets\MTree\Scripts\TreeTemplate.cs" />
     <Compile Include="Assets\MTree\Scripts\Utils.cs" />
+    <Compile Include="Assets\bulletPos.cs" />
     <Compile Include="Assets\script\MoveCamera.cs" />
     <Compile Include="Assets\ExplosionEffect\Scripts\PDS_GameController.cs" />
+    <Compile Include="Assets\Full Body FPS Controller\Full Body FPS Controller\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\MTree\Scripts\TreeFunctions\GrowFunction.cs" />
     <Compile Include="Assets\MTree\Scripts\MtreeVariables.cs" />
     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
@@ -93,6 +97,7 @@
     <Compile Include="Assets\script\RoofFallingManage.cs" />
     <Compile Include="Assets\script\WallJump.cs" />
     <Compile Include="Assets\script\Player.cs" />
+    <Compile Include="Assets\script\AnimationController.cs" />
     <Compile Include="Assets\MTree\Scripts\TreeFunctions\SplitFunction.cs" />
     <Compile Include="Assets\DynamicBone\Scripts\DynamicBoneCollider.cs" />
     <Compile Include="Assets\MTree\Scripts\AO\DensityAO.cs" />
@@ -115,15 +120,13 @@
     <Compile Include="Assets\MTree\Scripts\SimplexNoise.cs" />
     <Compile Include="Assets\ExplosionEffect\Scripts\ScrollingUVs_PDS.cs" />
     <Compile Include="Assets\MTree\Scripts\Splines.cs" />
+    <Compile Include="Assets\Full Body FPS Controller\Full Body FPS Controller\Scripts\PlayerCamera.cs" />
     <Compile Include="Assets\MTree\Scripts\TreeFunctions\LeafFunction.cs" />
     <Compile Include="Assets\script\ExplosionEffectRemove.cs" />
     <Compile Include="Assets\Aura 2\Examples\Sources\Scripts\DebugFps.cs" />
-    <Compile Include="Assets\Full Body FPS Controller\Full Body FPS Controller\Scripts\PlayerCamera.cs" />
-    <Compile Include="Assets\Full Body FPS Controller\Full Body FPS Controller\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Full Body FPS Controller\Full Body FPS Controller\Scripts\FPSAnimator_SMB.cs" />
-    <Compile Include="Assets\UMotionExamples\Miscellaneous\Scripts\ResetPosition.cs" />
-    <Compile Include="Assets\script\AnimationController.cs" />
-    <Compile Include="Assets\bulletPos.cs" />
+    <Compile Include="Assets\script\pillarDestroy.cs" />
+    <Compile Include="Assets\script\wallDestroy.cs" />
+    <Compile Include="Assets\script\GameOver.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Shuriken\Demo Scene\Prototyping\Shaders\WorldCoordDiffuse.shader" />
@@ -794,21 +797,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Aura2_Core.csproj">
-      <Project>{3642E45D-DCEE-B73C-D0E5-CEDB78DAF321}</Project>
-      <Name>Aura2_Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="Aura2_Editor.csproj">
-      <Project>{7463F7F5-3119-D0C8-6308-FFC5C76651A3}</Project>
-      <Name>Aura2_Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="UMotionSourceApplication.csproj">
       <Project>{477B476E-EC4F-AD40-68F0-1FDAA37B3348}</Project>
       <Name>UMotionSourceApplication</Name>
     </ProjectReference>
+    <ProjectReference Include="Aura2_Core.csproj">
+      <Project>{3642E45D-DCEE-B73C-D0E5-CEDB78DAF321}</Project>
+      <Name>Aura2_Core</Name>
+    </ProjectReference>
     <ProjectReference Include="UMotionSourceEditor.csproj">
       <Project>{C4806574-6F30-C4F2-7CC1-DBE619AABBB3}</Project>
       <Name>UMotionSourceEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Aura2_Editor.csproj">
+      <Project>{7463F7F5-3119-D0C8-6308-FFC5C76651A3}</Project>
+      <Name>Aura2_Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

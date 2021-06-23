@@ -53,6 +53,7 @@
     <UnityVersion>2020.2.7f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Full Body FPS Controller\Full Body FPS Controller\Scripts\Editor\OtherAssetsWindow.cs" />
     <Compile Include="Assets\ExplosionEffect\Shaders\unity5\Editor\Shader_softrim_dissolve.cs" />
     <Compile Include="Assets\ExplosionEffect\Shaders\unity5\Editor\CustomMaterialEditor.cs" />
     <Compile Include="Assets\MTree\Editor\ValuesEditor.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="Assets\MTree\Editor\VertexColorAdjustmentEditor.cs" />
     <Compile Include="Assets\MTree\Editor\EditorCallbacks.cs" />
     <Compile Include="Assets\MTree\Editor\MtreeEditor.cs" />
-    <Compile Include="Assets\Full Body FPS Controller\Full Body FPS Controller\Scripts\Editor\OtherAssetsWindow.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\UMotionEditor\Plugins\Editor\UMotionEditor.dll" />
@@ -307,11 +307,11 @@
     <Reference Include="UnityEditor.UWP.Extensions">
       <HintPath>C:\unity\2020.2.7f1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UMotionApplication">
-      <HintPath>Assets\UMotionEditor\Plugins\Application\UMotionApplication.dll</HintPath>
-    </Reference>
     <Reference Include="UMotionEditor">
       <HintPath>Assets\UMotionEditor\Plugins\Editor\UMotionEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionApplication">
+      <HintPath>Assets\UMotionEditor\Plugins\Application\UMotionApplication.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -718,21 +718,21 @@
       <Project>{8DC060D9-FDEC-78ED-C0AC-735DADAE9F08}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="Aura2_Core.csproj">
-      <Project>{3642E45D-DCEE-B73C-D0E5-CEDB78DAF321}</Project>
-      <Name>Aura2_Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="Aura2_Editor.csproj">
-      <Project>{7463F7F5-3119-D0C8-6308-FFC5C76651A3}</Project>
-      <Name>Aura2_Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="UMotionSourceApplication.csproj">
       <Project>{477B476E-EC4F-AD40-68F0-1FDAA37B3348}</Project>
       <Name>UMotionSourceApplication</Name>
     </ProjectReference>
+    <ProjectReference Include="Aura2_Core.csproj">
+      <Project>{3642E45D-DCEE-B73C-D0E5-CEDB78DAF321}</Project>
+      <Name>Aura2_Core</Name>
+    </ProjectReference>
     <ProjectReference Include="UMotionSourceEditor.csproj">
       <Project>{C4806574-6F30-C4F2-7CC1-DBE619AABBB3}</Project>
       <Name>UMotionSourceEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Aura2_Editor.csproj">
+      <Project>{7463F7F5-3119-D0C8-6308-FFC5C76651A3}</Project>
+      <Name>Aura2_Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

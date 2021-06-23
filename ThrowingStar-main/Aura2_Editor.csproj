@@ -322,11 +322,11 @@
     <Reference Include="UnityEditor.UWP.Extensions">
       <HintPath>C:\unity\2020.2.7f1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UMotionApplication">
-      <HintPath>Assets\UMotionEditor\Plugins\Application\UMotionApplication.dll</HintPath>
-    </Reference>
     <Reference Include="UMotionEditor">
       <HintPath>Assets\UMotionEditor\Plugins\Editor\UMotionEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionApplication">
+      <HintPath>Assets\UMotionEditor\Plugins\Application\UMotionApplication.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

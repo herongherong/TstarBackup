@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public GameObject Bullets2;
     int WeaponinHand;
 
+    public bool isPillarDes = false;
+    public int PillarHit = 0;
 
     public Transform BulletPos;
     public Vector3 jumpVector;
@@ -94,10 +96,36 @@ public class Player : MonoBehaviour
 
 
     }
+   
 
     private void Update()
     {
 
+        if(PillarHit >=5)
+        {
+            Debug.Log("5회이상");
+            isPillarDes = true;
+        }
+
+        if (isPillarDes == true)
+        {
+            pillarDestroy pillardestroy = GameObject.Find("Pillar").GetComponent<pillarDestroy>();
+            pillardestroy.createRb();
+            pillarDestroy pillardestroy1 = GameObject.Find("Pillar (1)").GetComponent<pillarDestroy>();
+            pillardestroy1.createRb();
+            pillarDestroy pillardestroy2 = GameObject.Find("Pillar (2)").GetComponent<pillarDestroy>();
+            pillardestroy2.createRb();
+            pillarDestroy pillardestroy3 = GameObject.Find("Pillar (3)").GetComponent<pillarDestroy>();
+            pillardestroy3.createRb();
+            pillarDestroy pillardestroy4 = GameObject.Find("Pillar (4)").GetComponent<pillarDestroy>();
+            pillardestroy4.createRb();
+            pillarDestroy pillardestroy5 = GameObject.Find("Pillar (5)").GetComponent<pillarDestroy>();
+            pillardestroy5.createRb();
+            Invoke("pillDes", 3f);
+            isPillarDes = false;
+
+
+        }
         Speed = rb.velocity.sqrMagnitude; // 이 캐릭터의 속도를 딴곳에서 쓸거라서..
         //Debug.Log("spd:" + Speed);
 
@@ -179,7 +207,7 @@ public class Player : MonoBehaviour
                 isSlide = true; 
                 camPosition camposition = GameObject.Find("Camera Position").GetComponent<camPosition>();
                 camposition.moveSight();
-
+                
             }
 
 
@@ -197,6 +225,9 @@ public class Player : MonoBehaviour
                 Debug.Log("1번을 눌럿슴");
                 WeaponinHand = 1;
                 moveSpeed = 6f;
+                PillarHit++;
+                Debug.Log("필러히트"+PillarHit);
+
             }
             
         }
@@ -329,10 +360,13 @@ public class Player : MonoBehaviour
         Debug.Log("moveSpeedResetCall");
     }
 
+    private void pillDes()
+    {
+        isPillarDes = true;
+    }
 
 
 
-        
 
 }
 

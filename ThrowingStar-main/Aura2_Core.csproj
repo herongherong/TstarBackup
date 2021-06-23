@@ -419,11 +419,11 @@
     <Reference Include="UnityEditor.UWP.Extensions">
       <HintPath>C:\unity\2020.2.7f1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UMotionApplication">
-      <HintPath>Assets\UMotionEditor\Plugins\Application\UMotionApplication.dll</HintPath>
-    </Reference>
     <Reference Include="UMotionEditor">
       <HintPath>Assets\UMotionEditor\Plugins\Editor\UMotionEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionApplication">
+      <HintPath>Assets\UMotionEditor\Plugins\Application\UMotionApplication.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\unity\2020.2.7f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

@@ -1,13 +1,9 @@
 sceneSetups:
-- path: Assets/Scenes/Start.unity
+- path: Assets/MTree/examples.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/breakDownCathedral.unity
   isLoaded: 1
   isActive: 1
-  isSubScene: 0
-- path: Assets/UMotionExamples/Example Scene/UMotionExampleScene.unity
-  isLoaded: 0
-  isActive: 0
   isSubScene: 0
