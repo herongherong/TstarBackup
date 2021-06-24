@@ -62,6 +62,9 @@ public class Bullet : MonoBehaviour
             //Debug.Log("col");
             //firstCollision = true;
             bulPos = TargetObj.transform.position - offset;
+
+
+            
         }
         else if(other.tag == "Enemy")
         {
@@ -73,12 +76,15 @@ public class Bullet : MonoBehaviour
             //Destroy(TargetObj, 3);
             //firstCollision = true;
             bulPos = TargetObj.transform.position - offset;
+
         }
+        
 
-         
 
-       
+
+
     }
+
     /*
     void collisionOK()
     {

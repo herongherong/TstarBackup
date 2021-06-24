@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//Plai À¯Æ©ºê https://www.youtube.com/watch?v=LqnPeqoJRFY ÂüÁ¶
+//Plai ìœ íŠœë¸Œ https://www.youtube.com/watch?v=LqnPeqoJRFY ì°¸ì¡°
 public class Player : MonoBehaviour
 {
-    //¼ö¸®°Ë ¹¹ µé°ÇÁö Ã³¸®ÇÏ±â À§ÇØ¼­
+    public Vector3 Ppos;
+    //ìˆ˜ë¦¬ê²€ ë­ ë“¤ê±´ì§€ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ì„œ
     public GameObject Bullets;
     public GameObject Bullets2;
     int WeaponinHand;
@@ -18,18 +19,18 @@ public class Player : MonoBehaviour
     public Vector3 jumpVector;
     public float Speed;
 
-    //Ä³¸¯ÅÍ³ôÀÌ Á¤ÇØÁÜ ¹Ø¿¡ ÀÖ´Â isGround¿¡¼­ »ç¿ë
+    //ìºë¦­í„°ë†’ì´ ì •í•´ì¤Œ ë°‘ì— ìˆëŠ” isGroundì—ì„œ ì‚¬ìš©
     float playerHeight = 2f;
 
     [SerializeField] Transform orientation;
-    [Header("Movement")] //ÀÌµ¿º¯¼ö Çì´õ
+    [Header("Movement")] //ì´ë™ë³€ìˆ˜ í—¤ë”
 
     public float moveSpeed = 6f;
-    public float movementMultiplier = 10f;//ÀÌµ¿¼Óµµ Ãß°¡
+    public float movementMultiplier = 10f;//ì´ë™ì†ë„ ì¶”ê°€
 
-    [SerializeField] float airMultiplier = 0.3f;//ÀÌµ¿¼Óµµ Ãß°¡
+    [SerializeField] float airMultiplier = 0.3f;//ì´ë™ì†ë„ ì¶”ê°€
 
-    [Header("Keybinds")]//Á¡ÇÁÅ° ¸¸µé¾îÁÖ´Â Çì´õ¶ó ÇÔ
+    [Header("Keybinds")]//ì í”„í‚¤ ë§Œë“¤ì–´ì£¼ëŠ” í—¤ë”ë¼ í•¨
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
     [SerializeField] KeyCode sliding = KeyCode.C;
     [SerializeField] KeyCode keyboard1 = KeyCode.Alpha1;
@@ -41,17 +42,17 @@ public class Player : MonoBehaviour
 
 
     
-    [Header("Drag")] // ´ëÃæ °ø±âÀúÇ× ´À³¦. µå·¡±×°ª¿¡ µû¶ó¼­ ÃÖ´ë°¡¼Óµµ Á¤ÇØÁü.
+    [Header("Drag")] // ëŒ€ì¶© ê³µê¸°ì €í•­ ëŠë‚Œ. ë“œë˜ê·¸ê°’ì— ë”°ë¼ì„œ ìµœëŒ€ê°€ì†ë„ ì •í•´ì§.
     float groundDrag = 6f;
     float airDrag = 1.2f;
 
-    //¼öÁ÷¹æÇâ µÎ°³ ÇÊ¿ä
+    //ìˆ˜ì§ë°©í–¥ ë‘ê°œ í•„ìš”
     float horizontalMovement;
     float verticalMovement;
 
     
 
-    [Header("Ground Detection")] //Áö»ó°¨Áö¸¦ À§ÇÑ Çì´õ. ÆòÁö¸»°í ³ª¸ÓÁö °æ»ç·Î ¿À¸£±â À§ÇÔ.
+    [Header("Ground Detection")] //ì§€ìƒê°ì§€ë¥¼ ìœ„í•œ í—¤ë”. í‰ì§€ë§ê³  ë‚˜ë¨¸ì§€ ê²½ì‚¬ë¡œ ì˜¤ë¥´ê¸° ìœ„í•¨.
 
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
@@ -63,13 +64,14 @@ public class Player : MonoBehaviour
     Rigidbody rb;
 
     RaycastHit slopeHit;
-
+    public GameObject PauseUI;  //í¼ì¦ˆUIì—°ê²°
+    public AudioSource thr;     //ë˜ì§€ëŠ” ì†Œë¦¬.  ì¢Œí´ë¦­ì‹œ Play
 
     private bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight / 2 +  0.5f))
         {
-            //°æ»ç¸é ¹ı¼±º¤ÅÍ ¼öÁ÷ ¾Æ´Ï¸é ¸ğµÎ °æ»ç·Î Ãë±ŞÇÏ±â À§ÇÔÀÌ·¡
+            //ê²½ì‚¬ë©´ ë²•ì„ ë²¡í„° ìˆ˜ì§ ì•„ë‹ˆë©´ ëª¨ë‘ ê²½ì‚¬ë¡œ ì·¨ê¸‰í•˜ê¸° ìœ„í•¨ì´ë˜
             if(slopeHit.normal != Vector3.up)
             {
                 return true;
@@ -90,7 +92,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>(); //¸®Áöµå¹Ùµğ ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        rb = GetComponent<Rigidbody>(); //ë¦¬ì§€ë“œë°”ë”” ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
         rb.freezeRotation = true;
         WeaponinHand = 3;
 
@@ -100,10 +102,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-
+        Ppos = this.gameObject.transform.position;
         if(PillarHit >=5)
         {
-            Debug.Log("5È¸ÀÌ»ó");
+            Debug.Log("5íšŒì´ìƒ");
             isPillarDes = true;
         }
 
@@ -126,14 +128,14 @@ public class Player : MonoBehaviour
 
 
         }
-        Speed = rb.velocity.sqrMagnitude; // ÀÌ Ä³¸¯ÅÍÀÇ ¼Óµµ¸¦ µı°÷¿¡¼­ ¾µ°Å¶ó¼­..
+        Speed = rb.velocity.sqrMagnitude; // ì´ ìºë¦­í„°ì˜ ì†ë„ë¥¼ ë”´ê³³ì—ì„œ ì“¸ê±°ë¼ì„œ..
         //Debug.Log("spd:" + Speed);
 
-        //¶¥°úÀÇ Ãæµ¹À» È®ÀÎ, Ä³¸¯ÅÍ ³ôÀÌ 2f¿¡¼­ ¹İ ³ª´©°í ¶¥°ú ³ôÀÌÃøÁ¤ÇÔ. 
-        //´êÁö ¾ÊÀ»‹šµµ ÀÖÀ¸´Ï È®½ÇÇÏ°Ô ÇÏ·Á°í 0.1f·Î º¸¿Ï
+        //ë•…ê³¼ì˜ ì¶©ëŒì„ í™•ì¸, ìºë¦­í„° ë†’ì´ 2fì—ì„œ ë°˜ ë‚˜ëˆ„ê³  ë•…ê³¼ ë†’ì´ì¸¡ì •í•¨. 
+        //ë‹¿ì§€ ì•Šì„ë–„ë„ ìˆìœ¼ë‹ˆ í™•ì‹¤í•˜ê²Œ í•˜ë ¤ê³  0.1fë¡œ ë³´ì™„
         //isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight / 2 + 0.1f);
 
-        //ÆòÁö°¡ ¾Æ´Ñ ¾ğ´ö/°è´Ü µîÀ» ¿À¸£±â À§ÇØ¼­ ·¹ÀÌÄ³½ºÆ® ´ë½Å ¹°¸®¸¦ »ç¿ëÇÔ.
+        //í‰ì§€ê°€ ì•„ë‹Œ ì–¸ë•/ê³„ë‹¨ ë“±ì„ ì˜¤ë¥´ê¸° ìœ„í•´ì„œ ë ˆì´ìºìŠ¤íŠ¸ ëŒ€ì‹  ë¬¼ë¦¬ë¥¼ ì‚¬ìš©í•¨.
         isGrounded = Physics.CheckSphere(transform.position - new Vector3(0,1,0), groundDistance, groundMask);
 
         if(isGrounded == true)
@@ -145,33 +147,37 @@ public class Player : MonoBehaviour
         MyInput();
         ControlDrag();
 
-        //ÃÑ¾Ë »ı¼º. xRotationÀ» Ä«¸Ş¶ó¿¡¼­ ¹Ş¾Æ¾ßÇÏ´Âµ¥..
+        //ì´ì•Œ ìƒì„±. xRotationì„ ì¹´ë©”ë¼ì—ì„œ ë°›ì•„ì•¼í•˜ëŠ”ë°..
         
 
             if (Input.GetMouseButtonUp(0))
-            {//Ä«¸Ş¶ó¿¡ x·ÎÅ×ÀÌ¼ÇÀÌ ´Ş·ÁÀÖ¾î¼­ ºÒ¸´ »ı¼º½Ã xÈ¸ÀüÀÌ ÀüÇô µé¾î°¡Áö ¾ÊÀ½... ÇØ°áÁß
-             //playerCamera ¿¡¼­ µÑ´Ù ¹Ş¾Æ¿Í¼­ Ãß°¡ÇßÀ½.
+            {//ì¹´ë©”ë¼ì— xë¡œí…Œì´ì…˜ì´ ë‹¬ë ¤ìˆì–´ì„œ ë¶ˆë¦¿ ìƒì„±ì‹œ xíšŒì „ì´ ì „í˜€ ë“¤ì–´ê°€ì§€ ì•ŠìŒ... í•´ê²°ì¤‘
+             //playerCamera ì—ì„œ ë‘˜ë‹¤ ë°›ì•„ì™€ì„œ ì¶”ê°€í–ˆìŒ.
                 playerCamera playercamera = GameObject.Find("PlayerFps").GetComponent<playerCamera>();
                 float xRotationTemp = playercamera.xRotation;
                 float yRotationTemp = playercamera.yRotation;
                 Quaternion pRotation = Quaternion.Euler(xRotationTemp, yRotationTemp, 0);
 
-                //Æø¹ß¼ö¸®°Ë
+                //í­ë°œìˆ˜ë¦¬ê²€
                 if (WeaponinHand == 1)
                 {
-                    Debug.Log("Æø¹ß¼ö¸®°Ë ¹ß»ç");
+                    Debug.Log("í­ë°œìˆ˜ë¦¬ê²€ ë°œì‚¬");
 
                     GameObject Bullet = Instantiate(Bullets, BulletPos.position, pRotation);
                     //GameObject Bullet = Instantiate(Bullets, BulletPos.position, transform.localRotation);
+
+                    thr.Play();// ìˆ˜ë¦¬ê²€ ë˜ì§ˆë•Œë§Œ ì†Œë¦¬ë‚˜ê²Œ
                 }
-                //Áß·Â¼ö¸®°Ë
+                //ì¤‘ë ¥ìˆ˜ë¦¬ê²€
                 else if (WeaponinHand == 2)
                 {
-                    Debug.Log("Áß·Â¼ö¸®°Ë ¹ß»ç");
+                    Debug.Log("ì¤‘ë ¥ìˆ˜ë¦¬ê²€ ë°œì‚¬");
 
                     GameObject Bullet2 = Instantiate(Bullets2, BulletPos.position, pRotation);
+
+                    thr.Play();// ìˆ˜ë¦¬ê²€ ë˜ì§ˆë•Œë§Œ ì†Œë¦¬ë‚˜ê²Œ
                 }
-                //¸Ç¼Õ, 
+                //ë§¨ì†, 
                 else if (WeaponinHand == 3)
                 {
 
@@ -179,7 +185,7 @@ public class Player : MonoBehaviour
 
             }
 
-        //Á¡ÇÁ¿Í ´õºíÁ¡ÇÁ(º®Á¡ÇÁ)
+        //ì í”„ì™€ ë”ë¸”ì í”„(ë²½ì í”„)
         if(Input.GetKeyDown(jumpKey) && isGrounded)
         {
             Jump();
@@ -190,20 +196,20 @@ public class Player : MonoBehaviour
             isDoubleJump = false; 
         }
 
-        //°æ»ç¸é Ã³¸®
+        //ê²½ì‚¬ë©´ ì²˜ë¦¬
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
 
 
 
-        //½½¶óÀÌµù±¸Çö
+        //ìŠ¬ë¼ì´ë”©êµ¬í˜„
         if (Input.GetKey(sliding) && isGrounded)
         {
             if (!isSlide)
             {
-                //Ãß°¡¼Óµµ(1.3¹è·Î 0.8ÃÊ À¯Áö)
+                //ì¶”ê°€ì†ë„(1.3ë°°ë¡œ 0.8ì´ˆ ìœ ì§€)
                 moveSpeed = moveSpeed *1.5f;
                 Invoke("moveSpeedReset", 0.8f);
-                //Ä«¸Ş¶óyÃà Àı¹İ ³»·Á°¨(0.8ÃÊ À¯Áö)
+                //ì¹´ë©”ë¼yì¶• ì ˆë°˜ ë‚´ë ¤ê°(0.8ì´ˆ ìœ ì§€)
                 isSlide = true; 
                 camPosition camposition = GameObject.Find("Camera Position").GetComponent<camPosition>();
                 camposition.moveSight();
@@ -217,16 +223,17 @@ public class Player : MonoBehaviour
         {
             if(WeaponinHand != 1)
             {
-                //°Á 1¹ø 2¹ø µÑ´Ù °¡Á®¿Í¼­ ÃÊ±âÈ­½ÃÅ°°Å³ª ´Ã¸®°Å³ª ÇÔ
+                //ê± 1ë²ˆ 2ë²ˆ ë‘˜ë‹¤ ê°€ì ¸ì™€ì„œ ì´ˆê¸°í™”ì‹œí‚¤ê±°ë‚˜ ëŠ˜ë¦¬ê±°ë‚˜ í•¨
                 WeaponChange weaponchange = GameObject.Find("WeaponNo1").GetComponent<WeaponChange>();
                 WeaponChange1 weaponchange1 = GameObject.Find("WeaponNo2").GetComponent<WeaponChange1>();
                 weaponchange.UIincrease();
                 weaponchange1.UIdecrease();
-                Debug.Log("1¹øÀ» ´­·µ½¿");
+                Debug.Log("1ë²ˆì„ ëˆŒëŸ¿ìŠ´");
                 WeaponinHand = 1;
                 moveSpeed = 6f;
-                PillarHit++;
-                Debug.Log("ÇÊ·¯È÷Æ®"+PillarHit);
+
+                
+                
 
             }
             
@@ -235,13 +242,13 @@ public class Player : MonoBehaviour
         {
             if (WeaponinHand != 2)
             {
-                //°Á 1¹ø 2¹ø µÑ´Ù °¡Á®¿Í¼­ ÃÊ±âÈ­½ÃÅ°°Å³ª ´Ã¸®°Å³ª ÇÔ
+                //ê± 1ë²ˆ 2ë²ˆ ë‘˜ë‹¤ ê°€ì ¸ì™€ì„œ ì´ˆê¸°í™”ì‹œí‚¤ê±°ë‚˜ ëŠ˜ë¦¬ê±°ë‚˜ í•¨
                 WeaponChange weaponchange = GameObject.Find("WeaponNo1").GetComponent<WeaponChange>();
                 WeaponChange1 weaponchange1 = GameObject.Find("WeaponNo2").GetComponent<WeaponChange1>();
                 weaponchange.UIdecrease();
                 weaponchange1.UIincrease();
 
-                Debug.Log("2¹øÀ» ´­·µ½¿");
+                Debug.Log("2ë²ˆì„ ëˆŒëŸ¿ìŠ´");
                 WeaponinHand = 2;
                 moveSpeed = 6f;
             }
@@ -249,7 +256,7 @@ public class Player : MonoBehaviour
                 
         }
         else if (Input.GetKey(keyboard3))
-        {//°Á 1¹ø 2¹ø µÑ´Ù °¡Á®¿Í¼­ ÃÊ±âÈ­½ÃÅ°°Å³ª ´Ã¸®°Å³ª ÇÔ
+        {//ê± 1ë²ˆ 2ë²ˆ ë‘˜ë‹¤ ê°€ì ¸ì™€ì„œ ì´ˆê¸°í™”ì‹œí‚¤ê±°ë‚˜ ëŠ˜ë¦¬ê±°ë‚˜ í•¨
             if (WeaponinHand != 3)
             {
                 WeaponChange weaponchange = GameObject.Find("WeaponNo1").GetComponent<WeaponChange>();
@@ -257,7 +264,7 @@ public class Player : MonoBehaviour
                 weaponchange.UIdecrease();
                 weaponchange1.UIdecrease();
 
-                Debug.Log("3¹øÀ» ´­·µ½¿");
+                Debug.Log("3ë²ˆì„ ëˆŒëŸ¿ìŠ´");
                 WeaponinHand = 3;
                 moveSpeed = 8f;
             }
@@ -265,30 +272,38 @@ public class Player : MonoBehaviour
             
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
+            PauseUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
     }
 
-    void MyInput() //ÀÔ·ÂÃ³¸®¿ëÀÌ¶ó ÇÔ.
+    void MyInput() //ì…ë ¥ì²˜ë¦¬ìš©ì´ë¼ í•¨.
     {
-        //¼öÁ÷, ¼öÆòÀÌµ¿À» ¾òÀº ÈÄ Àû¿ë
+        //ìˆ˜ì§, ìˆ˜í‰ì´ë™ì„ ì–»ì€ í›„ ì ìš©
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
 
 
-        //¿ì¸®°¡ »ç¿ëÇÏ´Â ¼öÆòÀÌµ¿, ÇÃ·¹ÀÌ¾î°¡ ¹Ù¶óº¸´Â ¹æÇâÀ¸·Î ÀÌµ¿.
+        //ìš°ë¦¬ê°€ ì‚¬ìš©í•˜ëŠ” ìˆ˜í‰ì´ë™, í”Œë ˆì´ì–´ê°€ ë°”ë¼ë³´ëŠ” ë°©í–¥ìœ¼ë¡œ ì´ë™.
         moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
 
     }
 
     void Jump()
     {
-        //Á¡ÇÁ½Ã À§ÂÊ¹æÇâÀ¸·Î ÈûÃß°¡ÇÏ´Â ½ÄÀ¸·Î Á¡ÇÁÇÑ´ÙÇÔ
+        //ì í”„ì‹œ ìœ„ìª½ë°©í–¥ìœ¼ë¡œ í˜ì¶”ê°€í•˜ëŠ” ì‹ìœ¼ë¡œ ì í”„í•œë‹¤í•¨
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse); 
     }
 
-    void doubleJump() //º®Á¡ÇÁ ´ë¿ëÀÌ¾ú´Âµ¥... À¯Æ©ºê¿¡ ÀÖ´Â°É·Î ÇØ¾ß ¹Ù¶óº¸´Â ¹æÇâ ¹İ»ç°¢À¸·Î ¶Ü.
+    void doubleJump() //ë²½ì í”„ ëŒ€ìš©ì´ì—ˆëŠ”ë°... ìœ íŠœë¸Œì— ìˆëŠ”ê±¸ë¡œ í•´ì•¼ ë°”ë¼ë³´ëŠ” ë°©í–¥ ë°˜ì‚¬ê°ìœ¼ë¡œ ëœ€.
     {
         
-        //Á¡ÇÁ½Ã À§ÂÊ¹æÇâÀ¸·Î ÈûÃß°¡ÇÏ´Â ½ÄÀ¸·Î Á¡ÇÁÇÑ´ÙÇÔ
+        //ì í”„ì‹œ ìœ„ìª½ë°©í–¥ìœ¼ë¡œ í˜ì¶”ê°€í•˜ëŠ” ì‹ìœ¼ë¡œ ì í”„í•œë‹¤í•¨
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         rb.AddRelativeForce(orientation.forward* -1 * 1.5f* jumpForce, ForceMode.Impulse);
 
@@ -297,7 +312,7 @@ public class Player : MonoBehaviour
     }
 
     void ControlDrag()
-    {//Ä³¸¯ÅÍ°¡ °øÁß¿¡¼­ Ç³¼±¸¶³É ¶ß´Â´À³¦ Áö¿ì·Á°í ¸¸µå´Â µí ÇÔ.
+    {//ìºë¦­í„°ê°€ ê³µì¤‘ì—ì„œ í’ì„ ë§ˆëƒ¥ ëœ¨ëŠ”ëŠë‚Œ ì§€ìš°ë ¤ê³  ë§Œë“œëŠ” ë“¯ í•¨.
         if(isGrounded)
         {
             rb.drag = groundDrag;
@@ -310,28 +325,28 @@ public class Player : MonoBehaviour
 
 
 
-    //¿òÁ÷ÀÓ ¸Å²ô·´°Ô ÇÏ±â À§ÇÑ Ãß°¡¶ó ÇÔ.
+    //ì›€ì§ì„ ë§¤ë„ëŸ½ê²Œ í•˜ê¸° ìœ„í•œ ì¶”ê°€ë¼ í•¨.
     private void FixedUpdate()
     {
         MovePlayer();
     }
 
-    //ÀÌµ¿
+    //ì´ë™
     void MovePlayer()
-    {//ÀÌµ¿¹æÇâÀ¸·Î ÈûÀ» °¡ÇÔ, ³ë¸Ö¶óÀÌÁîµå °öÇÑ ÀÌÀ¯´Â ´ë°¢¼± ·çÆ®2¶§¹®¿¡.
+    {//ì´ë™ë°©í–¥ìœ¼ë¡œ í˜ì„ ê°€í•¨, ë…¸ë©€ë¼ì´ì¦ˆë“œ ê³±í•œ ì´ìœ ëŠ” ëŒ€ê°ì„  ë£¨íŠ¸2ë•Œë¬¸ì—.
 
         if (isGrounded && !OnSlope())
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
 
         }
-        //¶¥ÀÎµ¥ °æ»ç¸é¿¡ ÀÖÀ» °æ¿ì ÀÌµ¿
+        //ë•…ì¸ë° ê²½ì‚¬ë©´ì— ìˆì„ ê²½ìš° ì´ë™
         else if (isGrounded && OnSlope())
         {
             rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
 
         }
-        //ÆòÁö¹â°íÀÖÀ» °æ¿ì
+        //í‰ì§€ë°Ÿê³ ìˆì„ ê²½ìš°
         else if (!isGrounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
@@ -348,11 +363,15 @@ public class Player : MonoBehaviour
         {
             isDoubleJump = true;
         }
+        
+        
     }
 
+    
+   
 
 
-    //½½¶óÀÌµù ³¡³ª°í ÃÊ±âÈ­ ÇÏ´Â¿ë. isSlide Ã³¸®¶§¹®¿¡..
+    //ìŠ¬ë¼ì´ë”© ëë‚˜ê³  ì´ˆê¸°í™” í•˜ëŠ”ìš©. isSlide ì²˜ë¦¬ë•Œë¬¸ì—..
     void moveSpeedReset()
     {
         moveSpeed = 6f;
@@ -366,6 +385,7 @@ public class Player : MonoBehaviour
     }
 
 
+    
 
 
 }

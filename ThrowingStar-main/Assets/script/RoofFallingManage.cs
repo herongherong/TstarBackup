@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RoofFallingManage : MonoBehaviour
 {
+    public bool isPillarFall = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,14 @@ public class RoofFallingManage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(-1,0,0) *6f* Time.deltaTime);
+        if(isPillarFall == true)
+        {
+            roofFalling();
+        }
+    }
+
+    void roofFalling()
+    {
+        transform.Translate(new Vector3(-1, 0, 0) * 11f * Time.deltaTime);
     }
 }
